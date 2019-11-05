@@ -24,10 +24,10 @@
 <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
 <script>
   function getLocation() {
-    alert("getLocal")
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition, showError);
-      alert("in")
+      navigator.geolocation.getCurrentPosition(translatePoint); //定位 
+      alert("Loading....")
     } else {
       alert("浏览器不支持地理定位。");
     }
@@ -74,10 +74,8 @@
   }
 
 
-  $(function () {
-    navigator.geolocation.getCurrentPosition(translatePoint); //定位 
-  });
   function translatePoint(position) {
+    alert("positionWay");
     var currentLat = position.coords.latitude;
     var currentLon = position.coords.longitude;
     var gpsPoint = new BMap.Point(currentLon, currentLat);
