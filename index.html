@@ -14,20 +14,20 @@
 
 <body>
   <p>HTML5定位功能</p>
-  <p>您的纬度：<span id="latitude"></span></p>
-  <p>您的精度：<span id="longitude"></span></p>
-  <p id="errMsg"></p>
+  <p id="baidu"></p>
 
   <button id="openTXMap" onclick="getLocation()">开启定位</button>
-  <div id="mapWrap"></div>
+  <div id="mapWrap"></div> 
 </body>
 <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wqBXfIN3HkpM1AHKWujjCdsi"></script>
 <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
 <script>
   function getLocation() {
+    alert("getLocal")
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition, showError);
+      alert("in")
     } else {
       alert("浏览器不支持地理定位。");
     }
